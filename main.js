@@ -42,7 +42,7 @@ function tackleCompare() {
   }
 }
 
-console.log(tackleCompare());
+
 
 function interceptions() {
   return (kyleHamStats2023.interceptions > edReedStats2004.interceptions &&
@@ -56,7 +56,7 @@ function interceptions() {
       `Troy polomalu had ${troyPolamaluStats2010.interceptions} interceptions in the 2010 season.`;
 }
 
-console.log(interceptions());
+
 
 function assitedTackles() {
   return (kyleHamStats2023.assist > edReedStats2004.assist &&
@@ -64,12 +64,12 @@ function assitedTackles() {
     ? `Kyle Hamiliton had ${kyleHamStats2023.assist} assisted tackles in the 2023 season.`
     : (edReedStats2004.assist > kyleHamStats2023.assist &&
       edReedStats2004.assist > troyPolamaluStats2010.assist)
-    ? ` Ed Reed had ${edReedStats2004.assist} assisted tackles in the 2004 season. `
+    ? `Ed Reed had ${edReedStats2004.assist} assisted tackles in the 2004 season. `
     : troyPolamaluStats2010 > kyleHamStats2023.assist &&
       troyPolamaluStats2010.assist`Troy Polamalu had ${troyPolamaluStats2010.assist} assisted tackles in the 2010 season.`;
 }
 
-console.log(assitedTackles());
+
 
 function forcedFumbles() {
   return (kyleHamStats2023.forcedFumbles > edReedStats2004.forcedFumbles &&
@@ -83,7 +83,7 @@ function forcedFumbles() {
       `Troy Polomalu had ${troyPolamaluStats2010.forcedFumbles} forced fumbles in the 2010 season.`;
 }
 
-console.log(forcedFumbles());
+
 
 function sacks() {
   return (kyleHamStats2023.sacks > edReedStats2004.sacks &&
@@ -97,7 +97,6 @@ function sacks() {
       `Troy Polomalu had ${troyPolamaluStats2010.sacks} sacks in the 2010 season`;
 }
 
-console.log(sacks());
 
 function tacklesForaLoss() {
   return (kyleHamStats2023.tackleForLoss > edReedStats2004.tackleForLoss &&
@@ -108,7 +107,7 @@ function tacklesForaLoss() {
     ? `Ed Reed had ${edReedStats2004.tackleForLoss} tackles for a loss in the 2004 season.`
     : `Troy Polomalu had ${troyPolamaluStats2010.tackleForLoss} tackles for a loss in the 2010 season. `;
 }
-console.log(tacklesForaLoss());
+
 
 const statSummary = [sacks() , tacklesForaLoss(), sacks() , forcedFumbles() , interceptions() , assitedTackles() , tackleCompare()]
 
@@ -117,13 +116,15 @@ const sortedSummary = statSummary.toSorted();
 
 const stringSummary = sortedSummary.toString();
 
-console.log(stringSummary)
-console.log(sortedSummary)
-console.log(statSummary)
+
+
+
 
 function stats() {
   return tacklesForaLoss() + sacks() + forcedFumbles() +
   interceptions() + assitedTackles() + tackleCompare()
 }
 
-console.log(stats());
+ for (let i = 0; i < sortedSummary.length; ++i) {
+  console.log(statSummary[i])
+}
