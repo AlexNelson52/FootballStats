@@ -38,7 +38,7 @@ function tackleCompare() {
     kyleHamStats2023.tackles < edReedStats2004.tackles &&
     kyleHamStats2023.tackles > troyPolamaluStats2010.tackles
   ) {
-    return `Ed reed had ${edReedStats2004.tackles} in the 2004 season.`;
+    return `Ed reed had ${edReedStats2004.tackles} tackles in the 2004 season.`;
   }
 }
 
@@ -64,7 +64,7 @@ function assitedTackles() {
     ? `Kyle Hamiliton had ${kyleHamStats2023.assist} assisted tackles in the 2023 season.`
     : (edReedStats2004.assist > kyleHamStats2023.assist &&
       edReedStats2004.assist > troyPolamaluStats2010.assist)
-    ? `Ed Reed had ${edReedStats2004.assist} assisted tackles in the 2004 season.`
+    ? ` Ed Reed had ${edReedStats2004.assist} assisted tackles in the 2004 season. `
     : troyPolamaluStats2010 > kyleHamStats2023.assist &&
       troyPolamaluStats2010.assist`Troy Polamalu had ${troyPolamaluStats2010.assist} assisted tackles in the 2010 season.`;
 }
@@ -77,7 +77,7 @@ function forcedFumbles() {
     ? `Kyle Hamiltion had ${kyleHamStats2023.forcedFumbles} forced fumbles in the 2023 season.`
     : (edReedStats2004.forcedFumbles > kyleHamStats2023.forcedFumbles &&
       edReedStats2004.forcedFumbles > troyPolamaluStats2010.forcedFumbles)
-    ? `Ed Reed had ${edReedStats2004.forcedFumbles} forced fumbles in the 2004 season.`
+    ? `Ed Reed had ${edReedStats2004.forcedFumbles} forced fumbles in the 2004 season. `
     : troyPolamaluStats2010.forcedFumbles > edReedStats2004.forcedFumbles &&
       kyleHamStats2023.forcedFumbles
       `Troy Polomalu had ${troyPolamaluStats2010.forcedFumbles} forced fumbles in the 2010 season.`;
@@ -88,7 +88,7 @@ console.log(forcedFumbles());
 function sacks() {
   return (kyleHamStats2023.sacks > edReedStats2004.sacks &&
     kyleHamStats2023.sacks > troyPolamaluStats2010.sacks)
-    ? `Kyle Hamiltion had ${kyleHamStats2023.sacks} sacks in the 2023 season.`
+    ? `Kyle Hamiltion had ${kyleHamStats2023.sacks} sacks in the 2023 season. `
     : (edReedStats2004.sacks > kyleHamStats2023.sacks &&
       edReedStats2004.sacks > troyPolamaluStats2010.sacks)
     ? `Ed Reed had ${edReedStats2004.sacks} sacks in the 2004 season.`
@@ -106,11 +106,24 @@ function tacklesForaLoss() {
     : (edReedStats2004.tackleForLoss > kyleHamStats2023.tackleForLoss &&
       edReedStats2004.tackleForLoss > troyPolamaluStats2010.tackleForLoss)
     ? `Ed Reed had ${edReedStats2004.tackleForLoss} tackles for a loss in the 2004 season.`
-    : `Troy Polomalu had ${troyPolamaluStats2010.tackleForLoss} tackles for a loss in the 2010 season`;
+    : `Troy Polomalu had ${troyPolamaluStats2010.tackleForLoss} tackles for a loss in the 2010 season. `;
 }
 console.log(tacklesForaLoss());
 
-let statSummary = [sacks(), tacklesForaLoss(), sacks(), forcedFumbles(), interceptions(), assitedTackles(), tackleCompare(),]
+const statSummary = [sacks() , tacklesForaLoss(), sacks() , forcedFumbles() , interceptions() , assitedTackles() , tackleCompare()]
 
-console.log(statSummary);
 
+const sortedSummary = statSummary.toSorted();
+
+const stringSummary = sortedSummary.toString();
+
+console.log(stringSummary)
+console.log(sortedSummary)
+console.log(statSummary)
+
+function stats() {
+  return tacklesForaLoss() + sacks() + forcedFumbles() +
+  interceptions() + assitedTackles() + tackleCompare()
+}
+
+console.log(stats());
